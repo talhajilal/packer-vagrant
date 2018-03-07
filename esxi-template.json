@@ -1,0 +1,62 @@
+{
+  "provisioners": [
+    {
+      "type": "shell",
+      "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
+      "script": "scripts/ansible.sh"
+    }
+  ],
+  "builders": [
+    {
+      "type": "vmware-iso",
+      "boot_command": [
+        "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
+      ],
+      "boot_wait": "10s",
+      "disk_size": 81920,
+      "guest_os_type": "centos-64",
+      "headless": true,
+      "http_directory": "http",
+      "iso_urls": [
+        "CentOS-7-x86_64-Minimal-1708.iso",
+        "CentOS-7-x86_64-Minimal-1708.iso"
+      ],
+      "iso_checksum_type": "sha256",
+      "iso_checksum": "bba314624956961a2ea31dd460cd860a77911c1e0a56e4820a12b9c5dad363f5",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
+      "ssh_port": 22,
+      "ssh_wait_timeout": "10000s",
+      "shutdown_command": "echo 'vagrant'|sudo -S /sbin/halt -h -p",
+      "remote_host": "192.168.2.50",
+      "remote_datastore": "datastore1",
+      "remote_username": "root",
+      "remote_password": "Pass1234",
+      "remote_type": "esx5",
+      "ssh_username": "root",
+      "ssh_password": "vagrant",
+      "ssh_wait_timeout": "60m",
+      "tools_upload_flavor": "linux",
+      "http_directory": ".",
+      "boot_wait": "5s",
+      "vmx_data": {
+        "memsize": "2048",
+        "numvcpus": "2",
+        "ethernet0.present": "TRUE",
+        "ethernet0.startConnected": "TRUE",
+        "ethernet0.virtualDev": "e1000",
+        "ethernet0.addressType": "generated",
+        "ethernet0.generatedAddressOffset": "0",
+        "ethernet0.wakeOnPcktRcv": "FALSE"
+         },
+      "tools_upload_flavor": "linux",
+      "vm_name": "vmware-template",
+      "vmx_data": {
+        "cpuid.coresPerSocket": "2",
+        "memsize": "2048",
+        "numvcpus": "2"
+      }
+    }
+  ],
+
+}
