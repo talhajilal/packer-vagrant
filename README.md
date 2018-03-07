@@ -48,10 +48,8 @@ There's an included Vagrantfile that allows quick testing of the built Vagrant b
     # For VirtualBox:
     $ vagrant up virtualbox --provider=virtualbox
 
-## License
-
-MIT license.
 
 ## Author Information
 
-Created in 2014 by [Jeff Geerling](http://jeffgeerling.com/), author of [Ansible for DevOps](http://ansiblefordevops.com/).
+
+Talha Jilal   
