@@ -1,0 +1,6 @@
+1- Install Centos 7 enable epel repo. 2
+2- Setup packer library in /usr/local/bin/packer
+3- clone repo to git
+5- copy iso image in directory
+6- insert image md5sum sha 
+7- Install ovf tools 
