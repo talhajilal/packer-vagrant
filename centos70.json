@@ -18,7 +18,7 @@
   ],
   "builders": [
     {
-      "type": "virtualbox-iso",
+      "type": "vmware-iso",
       "boot_command": [
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
       ],
@@ -29,7 +29,7 @@
       "http_directory": "http",
       "iso_urls": [
         "CentOS-7-x86_64-Minimal-1708.iso",
-        "http://mirrors.ocf.berkeley.edu/centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-1708.iso"
+        "CentOS-7-x86_64-Minimal-1708.iso"
       ],
       "iso_checksum_type": "sha256",
       "iso_checksum": "bba314624956961a2ea31dd460cd860a77911c1e0a56e4820a12b9c5dad363f5",
@@ -57,7 +57,13 @@
       ]
     },
     {
-      "type": "vmware-iso",
+      "type": "vsphere-template",
+      "host": "192.168.2.50",
+      "insecure": true,
+      "username": "root",
+      "password": "Pass1234",
+      "datacenter": "mydatacenter",
+       "folder": "/"
       "boot_command": [
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
       ],
@@ -68,7 +74,7 @@
       "http_directory": "http",
       "iso_urls": [
         "CentOS-7-x86_64-Minimal-1708.iso",
-        "http://mirrors.ocf.berkeley.edu/centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-1708.iso"
+        "CentOS-7-x86_64-Minimal-1708.iso"
       ],
       "iso_checksum_type": "sha256",
       "iso_checksum": "bba314624956961a2ea31dd460cd860a77911c1e0a56e4820a12b9c5dad363f5",
