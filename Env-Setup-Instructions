@@ -3,4 +3,11 @@
 3- clone repo to git
 5- copy iso image in directory
 6- insert image md5sum sha 
-7- Install ovf tools 
+7- yum install -y git wget unzip sshpass
+8- install cpan 
+yum install cpan # Make sure epel repo enable.
+yum install gcc
+yum install openssl-devel libxml2-dev e2fsprogs-dev
+
+9- Install ovf tools 
+
