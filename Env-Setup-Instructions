@@ -9,8 +9,9 @@ yum install cpan # Make sure epel repo enable.
 yum install gcc
 yum install openssl-devel libxml2-dev e2fsprogs-dev
 yum -y install libuuid-devel
-
+VMware-Player
 comment proxy lines 
 
 9- Install ovf tools 
+yum install qemu-img
 
