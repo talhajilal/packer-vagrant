@@ -15,3 +15,13 @@ comment proxy lines
 9- Install ovf tools 
 yum install qemu-img
 
+# Note how to run packer in debug mode.
+wiindows
+$ set PACKER_LOG=10
+$ set PACKER_LOG_PATH=c:\temp\packer.log
+$ packer build -debug ubuntu_64.json
+
+export for linux
+$ export PACKER_LOG=10
+$ export PACKER_LOG_PATH=c:\temp\packer.log
+$ packer build -debug ubuntu_64.json
