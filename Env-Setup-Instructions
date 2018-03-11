@@ -25,3 +25,9 @@ export for linux
 $ export PACKER_LOG=10
 $ export PACKER_LOG_PATH=c:\temp\packer.log
 $ packer build -debug ubuntu_64.json
+
+
+
+
+
+( Reading Links) : http://www.greenreedtech.com/building-vsphere-templates-from-scratch-using-packer-and-the-vsphere-api/
