@@ -31,3 +31,7 @@ $ packer build -debug ubuntu_64.json
 
 
 ( Reading Links) : http://www.greenreedtech.com/building-vsphere-templates-from-scratch-using-packer-and-the-vsphere-api/
+
+
+Disable " Esxi host firewall " 
+# esxcli network firewall set --enabled false
