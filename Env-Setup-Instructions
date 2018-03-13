@@ -37,3 +37,16 @@ Disable " Esxi host firewall "
 # esxcli network firewall set --enabled false
 " Kickstart in consistent network"
 https://www.ispcolohost.com/2015/07/11/kickstarting-with-redhats-inconsistent-network-device-naming/
+
+
+
+++++++++++++++++ 
+
+
+Esx host setting  for packer direct VM building , 
+
+1- Enable SSH server on ESXi host. 
+2- Run the following command to enable 
+GuestIPHack is required, enable by running this on the ESX machine
+esxcli system settings advanced set -o /Net/GuestIPHack -i 1
+
