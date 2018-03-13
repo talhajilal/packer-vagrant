@@ -35,3 +35,5 @@ $ packer build -debug ubuntu_64.json
 
 Disable " Esxi host firewall " 
 # esxcli network firewall set --enabled false
+" Kickstart in consistent network"
+https://www.ispcolohost.com/2015/07/11/kickstarting-with-redhats-inconsistent-network-device-naming/
