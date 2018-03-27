@@ -1,0 +1,70 @@
+{
+  "builders": [
+    {
+      "type": "vmware-iso",
+            "floppy_files": [
+        "http/ks.cfg"
+      ],
+      "communicator": "none",
+      "disable_vnc": "false",
+      "boot_command": "<tab> inst.text inst.ks=hd:fd0:/ks.cfg <enter><wait>",
+      "disk_size": "21920",
+      "disk_type_id": "zeroedthick",
+      "guest_os_type": "centos-64",
+      "headless": true,
+      "http_directory": "http",
+      "output_directory": "test-vm-02",
+      "iso_urls": [
+        "CentOS-7-x86_64-Minimal-1708.iso"
+      ],
+      "iso_checksum_type": "sha256",
+      "iso_checksum": "bba314624956961a2ea31dd460cd860a77911c1e0a56e4820a12b9c5dad363f5",
+      "remote_host": "esxi-host",
+      "remote_datastore": "datastore-name",
+      "remote_username": "*********",
+      "remote_password": "*********",
+      "remote_type": "esx5",
+      "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c",
+      "tools_upload_flavor": "",
+      "http_directory": ".",
+      "boot_wait": "20s",
+      "communicator": "none",
+      "vmx_data": {
+        "memsize": "2048",
+        "numvcpus": "2",
+        "cpuid.coresPerSocket": "2",
+           "ethernet0.virtualDev": "e1000",
+           "ethernet0.networkName": "VM Network",
+           "ethernet0.present": "TRUE",
+           "ethernet0.virtualDev": "vmxnet3",
+           "ethernet0.startConnected": "TRUE",
+           "ethernet0.addressType": "generated"
+
+         },
+      "tools_upload_flavor": "",
+      "vm_name": "test-vm-02",
+      "vmx_data": {
+        "cpuid.coresPerSocket": "2",
+        "memsize": "2048",
+        "numvcpus": "2",
+           "ethernet0.virtualDev": "e1000",
+           "ethernet0.networkName": "VM Network",
+           "ethernet0.present": "TRUE",
+           "ethernet0.virtualDev": "vmxnet3",
+           "ethernet0.startConnected": "TRUE",
+           "ethernet0.addressType": "generated"
+      }
+    }
+  ],
+  "post-processors": [
+      {
+   "type": "vsphere-template",
+   "host": "vcenter-hostname",
+   "username": "*******",
+   "insecure": true,
+   "password": "***********",
+   "datacenter": "SDSI-LAB",
+   "folder": "/packer-vm-template"
+ }
+  ]
+}
