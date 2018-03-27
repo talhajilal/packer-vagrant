@@ -1,1 +1,16 @@
 
+This folder contain all necessary files , 
+
+Story :  this directoy contain the full package of packers file. Local iso image local kickstart file. 
+a- Provide esx and vcenter username password host name  in builder and post-procee area information.
+run this command " packer build vm-build-v1.0.json " 
+This enitre process will create a new vm shut it down and pack to vcenter as a template.
+
+1- iso image ,
+2- http directory 
+3- script directory
+
+commit this directory in your working location.
+cd packer-vagrant
+packer build vm-build-v1.0.json
+
